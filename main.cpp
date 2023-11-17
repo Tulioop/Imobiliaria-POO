@@ -80,12 +80,15 @@ int main(){
         cout << "Tipo de imovel: ";
         switch (pair.first) {
             case TipoImovel::CASA:
+                cout << "Casa" << endl;
                 printInfo(Imovel& imovel);
                 break;
             case TipoImovel::APARTAMENTO:
+                cout << "Apartamento" << endl;
                 printInfo(Imovel& imovel);;
                 break;
             case TipoImovel::CHACARA:
+                cout << "Chacara" << endl;
                 printInfo(Imovel& imovel);
                 break;
         }
