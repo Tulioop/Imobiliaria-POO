@@ -98,6 +98,19 @@ public:
         out << "Numero: " << imovel.numero << endl;
         out << "Quartos: " << imovel.quartos << endl;
         out << "Banheiros: " << imovel.banheiros << endl;
+
+        switch (imovel.tipo) {
+            case TipoImovel::CASA:
+                out << "Casa" << endl;
+                break;
+            case TipoImovel::APARTAMENTO:
+                out << "Apartamento" << endl;
+                break;
+            case TipoImovel::CHACARA:
+                out << "Chacara" << endl;
+                break;
+        }
+
         return out;
     }
 };

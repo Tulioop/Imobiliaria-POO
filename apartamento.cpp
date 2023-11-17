@@ -47,7 +47,10 @@ public:
 
     friend ostream& operator<<(ostream& out, const Apartamento& apartamento) {
         out << static_cast<const Imovel&>(apartamento);
-        // imprime os atributos adicionais da classe Apartamento
+        out << "Qtde Andar: " << apartamento.andar << endl;
+        out << "Taxa Condomínio: " << apartamento.taxa_condominio << endl;
+        if (apartamento.elevador == 1) out << "Possui Elevador" <<endl;
+        if (apartamento.sacada == 1) out << "Possui Sacada" <<endl;
         return out;
     }
 };

@@ -1,7 +1,15 @@
 #ifndef IMOVEL_H
 #define IMOVEL_H
 
+#include <iostream>
 #include <string>
+#include <fstream>
+
+enum class TipoImovel {
+    CASA,
+    APARTAMENTO,
+    CHACARA
+};
 
 class Imovel {
 private:
@@ -14,6 +22,7 @@ private:
     int numero;
     int quartos;
     int banheiros;
+    TipoImovel tipo;
 
 public:
     // Métodos set
@@ -35,6 +44,8 @@ public:
 
     void setBanheiros(int newBanheiros);
 
+    TipoImovel setTipo();
+
     // Métodos get
     int getId() const;
 
@@ -53,8 +64,14 @@ public:
     int getQuartos() const;
 
     int getBanheiros() const;
+
+    TipoImovel getTipo() const;
     
     friend ostream& operator<<(ostream& out, const Imovel& imovel);
+    
+    virtual void mostrarDados(ostream& out) const = 0;
+
+    virtual void salvarDados(ofstream& arquivo) const = 0;
 };
 
 #endif

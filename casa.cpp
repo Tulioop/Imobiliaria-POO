@@ -29,7 +29,8 @@ public:
 
     friend ostream& operator<<(ostream& out, const Casa& casa) {
         out << static_cast<const Imovel&>(casa);
-        // imprime os atributos adicionais da classe Casa
+        out << "Qtde de Andar: " << casa.andares << endl;
+        if (casa.sala_jantar == 1) out << "Possui Sala de Jantar" <<endl;
         return out;
     }
 };

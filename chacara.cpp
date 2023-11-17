@@ -56,7 +56,11 @@ public:
 
     friend ostream& operator<<(ostream& out, const Chacara& chacara) {
         out << static_cast<const Imovel&>(chacara);
-        // imprime os atributos adicionais da classe Chacara
+        if (chacara.salao_festa == 1) out << "Possui Salão de Festas" <<endl;
+        if (chacara.salao_jogos == 1) out << "Possui Salão de Jogos" <<endl;
+        if (chacara.campo.futebol == 1) out << "Possui Campo de Futebol" <<endl;
+        if (chacara.churrasqueira == 1) out << "Possui Churrasqueira" <<endl;
+        if (chacara.piscina == 1) out << "Possui Piscina" <<endl;
         return out;
     }
 };
