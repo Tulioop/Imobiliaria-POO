@@ -68,6 +68,8 @@ public:
     TipoImovel getTipo() const;
     
     friend ostream& operator<<(ostream& out, const Imovel& imovel);
+
+    virtual ~Imovel() {}
     
     virtual void mostrarDados(ostream& out) const = 0;
 

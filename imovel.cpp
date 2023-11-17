@@ -89,7 +89,23 @@ public:
     int getBanheiros() const {
         return banheiros;
     }
-    
+
+    virtual ~Imovel() {}
+
+    virtual void mostrarDados(ostream& out) const override{
+        printInfo(out);
+    }
+
+    virtual void salvarDados(ofstream& arquivo) const override{
+        arquivo << "ID: " << imovel.id << endl;
+        arquivo << "Valor: " << imovel.valor << endl;
+        arquivo << "Proprietario: " << imovel.proprietario << endl;
+        arquivo << "Endereco: " << imovel.rua << ", " << imovel.bairro << ", " << imovel.cidade << endl;
+        arquivo << "Numero: " << imovel.numero << endl;
+        arquivo << "Quartos: " << imovel.quartos << endl;
+        arquivo << "Banheiros: " << imovel.banheiros << endl;
+    }
+
     friend ostream& operator<<(ostream& out, const Imovel& imovel) {
         out << "ID: " << imovel.id << endl;
         out << "Valor: " << imovel.valor << endl;
@@ -99,18 +115,18 @@ public:
         out << "Quartos: " << imovel.quartos << endl;
         out << "Banheiros: " << imovel.banheiros << endl;
 
-        switch (imovel.tipo) {
-            case TipoImovel::CASA:
-                out << "Casa" << endl;
-                break;
-            case TipoImovel::APARTAMENTO:
-                out << "Apartamento" << endl;
-                break;
-            case TipoImovel::CHACARA:
-                out << "Chacara" << endl;
-                break;
-        }
-
+        // switch (imovel.tipo) {
+        //     case TipoImovel::CASA:
+        //         out << "Casa" << endl;
+        //         break;
+        //     case TipoImovel::APARTAMENTO:
+        //         out << "Apartamento" << endl;
+        //         break;
+        //     case TipoImovel::CHACARA:
+        //         out << "Chacara" << endl;
+        //         break;
+        // }
         return out;
+        
     }
 };

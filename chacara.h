@@ -3,7 +3,8 @@
 
 #include "imovel.h"
 
-class Chacara : public Imovel {
+class Chacara : public Imovel
+{
 private:
     bool salao_festa;
     bool salao_jogos;
@@ -34,6 +35,13 @@ public:
 
     bool getPiscina() const;
 
-    friend ostream& operator<<(ostream& out, const Chacara& chacara);
+    friend ostream &operator<<(ostream &out, const Chacara &chacara);
+
+    virtual ~Imovel() {}
+    
+    virtual void mostrarDados(ostream& out) const = 0;
+
+    virtual void salvarDados(ofstream& arquivo) const = 0;
+    
 };
 #endif

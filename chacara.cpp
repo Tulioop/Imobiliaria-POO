@@ -54,6 +54,21 @@ public:
         return piscina;
     }
 
+    virtual ~Imovel() {}
+
+    virtual void mostrarDados(ostream& out) const override{
+        printInfo(out);
+    }
+    
+    virtual void salvarDados(ofstream& arquivo) const override{
+        arquivo << static_cast<const Imovel&>(apartamento);
+        if (chacara.salao_festa == 1) arquivo << "Possui Salão de Festas" <<endl;
+        if (chacara.salao_jogos == 1) arquivo << "Possui Salão de Jogos" <<endl;
+        if (chacara.campo.futebol == 1) arquivo << "Possui Campo de Futebol" <<endl;
+        if (chacara.churrasqueira == 1) arquivo << "Possui Churrasqueira" <<endl;
+        if (chacara.piscina == 1) arquivo << "Possui Piscina" <<endl;
+    }
+
     friend ostream& operator<<(ostream& out, const Chacara& chacara) {
         out << static_cast<const Imovel&>(chacara);
         if (chacara.salao_festa == 1) out << "Possui Salão de Festas" <<endl;

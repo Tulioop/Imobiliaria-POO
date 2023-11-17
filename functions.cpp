@@ -120,7 +120,7 @@ unordered_map<TipoImovel, stdvector<Imovel>::const_iterator> encontrarImoveisPor
 }
 
 // LISTA COLEÇÃO IMOVEIS PARA PODER SALVAR EM ARQUIVO TXT
-void mostrarOuSalvarImoveis(const vector<Imovel*>& imoveis, TipoSaida tipoSaida) {
+void mostrarOuSalvarTodosImoveis(const vector<Imovel*>& imoveis, TipoSaida tipoSaida) {
     if (tipoSaida == TipoSaida::TERMINAL) {
         for (const auto& imovel : imoveis) {
             imovel->mostrarDados(cout);
@@ -137,4 +137,3 @@ void mostrarOuSalvarImoveis(const vector<Imovel*>& imoveis, TipoSaida tipoSaida)
         }
     }
 }
-

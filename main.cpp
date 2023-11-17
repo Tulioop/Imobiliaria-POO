@@ -92,6 +92,14 @@ int main(){
         cout << *(pair.second) << endl;
     }
 
+    // EXEMPLO LISTA COLEÇÃO IMOVEIS PARA PODER SALVAR EM ARQUIVO TXT
+    mostrarOuSalvarTodosImoveis(listaDeImoveis, TipoSaida::TERMINAL); // Mostrar no terminal
+    mostrarOuSalvarTodosImoveis(listaDeImoveis, TipoSaida::ARQUIVO); // Salvar em um arquivo
+
+    // Limpeza de memória dos ponteiros
+    for (auto& imovel : listaDeImoveis) {
+        delete imovel;
+    }
 
 
     return 0;

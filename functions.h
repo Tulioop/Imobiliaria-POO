@@ -28,7 +28,6 @@ enum class TipoSaida {
     ARQUIVO
 };
 
-void mostrarOuSalvarImoveis(const std::vector<Imovel*>& imoveis, TipoSaida tipoSaida);
-
+void mostrarOuSalvarTodosImoveis(const vector<Imovel*>& imoveis, TipoSaida tipoSaida);
 
 #endif 

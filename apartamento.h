@@ -3,7 +3,8 @@
 
 #include "imovel.h"
 
-class Apartamento : public Imovel {
+class Apartamento : public Imovel
+{
 private:
     int andar;
     float taxa_condominio;
@@ -29,7 +30,13 @@ public:
 
     bool getSacada() const;
 
-    friend ostream& operator<<(ostream& out, const Apartamento& apartamento);
+    friend ostream &operator<<(ostream &out, const Apartamento &apartamento);
+    
+    virtual ~Imovel() {}
+
+    virtual void mostrarDados(ostream &out) const = 0;
+
+    virtual void salvarDados(ofstream &arquivo) const = 0;
 };
 
 #endif
